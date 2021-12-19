@@ -1,7 +1,7 @@
 document.getElementById("mybtn").innerHTML="Download all Files";
 function download_files(files,filename,url) {
     function download_next(i) {
-      for(var i = 0; i < files.length; i++){}
+      for(var i = 0; i < files.length; i++){
       var element = document.createElement('a');
       element.setAttribute('href', files[i]);
       element.style.display = 'none';
@@ -17,6 +17,7 @@ function download_files(files,filename,url) {
           download_next(i + 1);
         }, 500);
     }
+  }
     // Initiate the first download.
     download_next(0);
 
