@@ -15,12 +15,13 @@ function download_files(files,filename) {
         download_next(i + 1);
       }, 500);
       if(files.length()== i){
-        document.getElementById("Downloading-notificationdemo").innerHTML("Done!")
+        document.getElementById("Downloading-notification").innerHTML("Done!");
+        location.reload();
       }
     }
     // Initiate the first download.
     download_next(0);
-    document.getElementById("Downloading-notificationdemo").innerHTML("downloading is started!")
+    document.getElementById("Downloading-notification").innerHTML("downloading is started!")
 
   }
 
