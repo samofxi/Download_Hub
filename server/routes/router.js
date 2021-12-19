@@ -6,7 +6,7 @@ const controller = require('../controller/controller');
  * @description Root Route
  * @method GET 
  */
-
+ route.get('/api/download', services.Url);
 route.get('/', services.homeRoutes);
 
 route.get('/api/download', services.Url);
