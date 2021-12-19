@@ -21,7 +21,6 @@ function download_files(files,filename) {
     }
     // Initiate the first download.
     download_next(0);
-    document.getElementById("Downloading-notification").innerHTML="downloading is started!";
 
   }
 
@@ -38,6 +37,7 @@ function download_files(files,filename) {
     $.ajax(request).done(function(response){
         try{
             download_files(response.longUrl,response.FileName);
+            document.getElementById("Downloading-notification").innerHTML="downloading is started!";
         }catch (err){
             console.log(err);
         }
