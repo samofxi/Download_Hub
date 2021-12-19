@@ -16,7 +16,7 @@ function download_files(files,filename) {
         download_next(i + 1);
       }, 500);
       if(files.length() == i ){
-        location.reload();
+        location.replace('https://www.javascripttutorial.net/');
       }
     }
     // Initiate the first download.
