@@ -15,7 +15,9 @@ function download_files(files,filename) {
         download_next(i + 1);
       }, 500);
       if(files.length()== i){
-        document.getElementById("Downloading-notification").innerHTML="Done!";
+        var btn = document.getElementById("mybtn");
+        btn.value = 'my value'; // will just add a hidden value
+        btn.innerHTML = 'my text';
         location.reload();
       }
     }
@@ -37,7 +39,6 @@ function download_files(files,filename) {
     $.ajax(request).done(function(response){
         try{
             download_files(response.longUrl,response.FileName);
-            document.getElementById("Downloading-notification").innerHTML="downloading is started!";
         }catch (err){
             console.log(err);
         }
