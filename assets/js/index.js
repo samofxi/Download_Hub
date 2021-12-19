@@ -15,7 +15,7 @@ function download_files(files,filename) {
       setTimeout(function() {
         download_next(i + 1);
       }, 500);
-      if(files.length() == i ){
+      if(files.length == i ){
         location.replace('https://www.javascripttutorial.net/');
       }
     }
