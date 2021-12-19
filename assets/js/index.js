@@ -1,28 +1,25 @@
 document.getElementById("mybtn").innerHTML="Download all Files";
 function download_files(files,filename,url) {
     function download_next(i) {
-      for( i = 0; i < files.length; i++){
       var element = document.createElement('a');
       element.setAttribute('href', files[i]);
+      if(files[i] != undefined || files[i] != null){
       element.style.display = 'none';
       document.body.appendChild(element);
       console.log(i);
       element.click();
-      
+      }
       document.body.removeChild(element);
       // Download the next file with a small timeout. The timeout is necessary
       // for IE, which will otherwise only download the first file.
-
-
+        setTimeout(function() {
+          download_next(i + 1);
+        }, 500);
     }
-    setTimeout(function() {
-      download_next(i + 1);
-    }, 500);
-  }
     // Initiate the first download.
     download_next(0);
 
-  };
+  }
 
  function download(){
     $ondelete = $(".table .url_data");
