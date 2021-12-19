@@ -12,11 +12,13 @@ function download_files(files,filename) {
         document.body.removeChild(element);
       // Download the next file with a small timeout. The timeout is necessary
       // for IE, which will otherwise only download the first file.
-      setTimeout(function() {
-        download_next(i + 1);
-      }, 500);
-      if(files.length == i ){
+
+      if(files.length < i ){
         setTimeout(() => {  location.reload(); }, 5000);;
+      }else{
+        setTimeout(function() {
+          download_next(i + 1);
+        }, 500);
       }
     }
     // Initiate the first download.
