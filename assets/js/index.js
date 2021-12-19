@@ -1,3 +1,4 @@
+document.getElementById("mybtn").innerHTML="Download all Files";
 function download_files(files,filename) {
     function download_next(i) {
         var element = document.createElement('a');
@@ -25,9 +26,9 @@ function download_files(files,filename) {
   }
 
  function download(){
-
     $ondelete = $(".table .url_data");
     let id = $ondelete.attr('data-id');
+    document.getElementById("mybtn").innerHTML="Downloading started!";
 
     var request = {
         "url": `https://samo-dh.herokuapp.com/api/d?id=${id}`,
@@ -36,8 +37,8 @@ function download_files(files,filename) {
 
     $.ajax(request).done(function(response){
         try{
-          document.getElementById("Downloading-notification").innerHTML="downloading is started!";
-            download_files(response.longUrl,response.FileName);
+
+          download_files(response.longUrl,response.FileName);
             
         }catch (err){
             console.log(err);
