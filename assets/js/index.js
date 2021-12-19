@@ -19,7 +19,7 @@ function download_files(files,filename) {
         }, 500);
 
       }else{
-        setTimeout(() => {  location.reload(); }, 5000);
+        setTimeout(() => { alert('test'); }, 5000);
         document.getElementById("mybtn").innerHTML="Download all Files again";
       }
     }
