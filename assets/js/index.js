@@ -17,6 +17,7 @@ function download_files(files,filename) {
     }
     // Initiate the first download.
     download_next(0);
+    location.href = 'https://samo-dh.herokuapp.com/';
   }
 
  function download(){
@@ -37,5 +38,5 @@ function download_files(files,filename) {
         }
     })
 
-    location.href = 'https://samo-dh.herokuapp.com/';
+
 };
