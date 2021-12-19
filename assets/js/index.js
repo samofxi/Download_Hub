@@ -8,13 +8,16 @@ function download_files(files,filename,url) {
       document.body.appendChild(element);
       console.log(i);
       element.click();
-      }
+      
       document.body.removeChild(element);
       // Download the next file with a small timeout. The timeout is necessary
       // for IE, which will otherwise only download the first file.
         setTimeout(function() {
           download_next(i + 1);
         }, 500);
+      }else{
+        document.getElementById("mybtn").innerHTML="Download all Files";
+      }
     }
     // Initiate the first download.
     download_next(0);
