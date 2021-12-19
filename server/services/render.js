@@ -9,7 +9,7 @@ exports.homeRoutes = (req,res)=>{
 
 
 exports.Url = (req,res)=>{
-    axios.get('http://localhost:5000/api/d', {params: {id: req.query.id}})
+    axios.get('https://samo-dh.herokuapp.com/api/d', {params: {id: req.query.id}})
     .then(function(urldata){
     res.render('Download', {url: urldata.data});
     })

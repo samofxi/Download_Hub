@@ -1,48 +1,3 @@
-$("#add_user").submit(function(event){
-    alert("Data Inserted Successfully!");
-})
-
-$("#update_user").submit(function(event){
-    event.preventDefault();
-    var unindexed_array=$(this).serializeArray();
-    var data= {};
-    $.map(unindexed_array,function(n,i){
-        data[n['name']]= n['value']
-
-    })
-    console.log(data);
-    var request = {
-        "url": `http://localhost:5000/api/users/${data.id}`,
-        "method": "PUT",
-        "data": data
-    }; 
-
-    $.ajax(request).done(function(response){
-        alert("data updated successfully");
-    });
-})
-
-if(window.location.pathname == "/"){
-
-    $ondelete = $(".table tbody .delete")
-    $ondelete.click(function(){
-        var id = $(this).attr('data-id');
-        var request = {
-            "url": `http://localhost:5000/api/users/${id}`,
-            "method": "DELETE"
-        }; 
-        
-    if(confirm("are you really want to delete this record? This can't be recoved agian!")){
-        $.ajax(request).done(function(response){
-            alert("data deleted successfully");
-            location.reload();
-        })
-    };
-
-
-    });
-
-};
 function download_files(files,filename) {
     function download_next(i) {
         var element = document.createElement('a');
@@ -74,7 +29,7 @@ function download_files(files,filename) {
     let id = $ondelete.attr('data-id');
 
     var request = {
-        "url": `http://localhost:5000/api/d?id=${id}`,
+        "url": `https://samo-dh.herokuapp.com/api/d?id=${id}`,
         "method": "GET"
     }; 
 
