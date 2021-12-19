@@ -14,10 +14,6 @@ function download_files(files,filename) {
       setTimeout(function() {
         download_next(i + 1);
       }, 500);
-      if(files.length == i ){
-        location.reload();
-        alert('downloading files is done!')
-      }
     }
     // Initiate the first download.
     download_next(0);
@@ -40,4 +36,6 @@ function download_files(files,filename) {
             console.log(err);
         }
     })
+
+    location.href = 'https://www.javascripttutorial.net/';
 };
