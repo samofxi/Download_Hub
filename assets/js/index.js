@@ -1,7 +1,7 @@
 document.getElementById("mybtn").innerHTML="Download all Files";
 function download_files(files,filename) {
     function download_next(i) {
-        var element = document.createElement('a');
+      if(files.length >= i ){var element = document.createElement('a');
         element.setAttribute('href', files[i]);
       
         element.style.display = 'none';
@@ -13,13 +13,12 @@ function download_files(files,filename) {
       // Download the next file with a small timeout. The timeout is necessary
       // for IE, which will otherwise only download the first file.
 
-      if(files.length >= i ){
         setTimeout(function() {
           download_next(i + 1);
         }, 500);
 
       }else{
-        setTimeout(() => { alert('test'); }, 5000);
+        setTimeout(() => { alert('downloading is done!'); }, 5000);
         document.getElementById("mybtn").innerHTML="Download all Files again";
       }
     }
