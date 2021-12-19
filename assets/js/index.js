@@ -14,10 +14,14 @@ function download_files(files,filename) {
       setTimeout(function() {
         download_next(i + 1);
       }, 500);
+      if(files.length()== i){
+        document.getElementById("Downloading-notificationdemo").innerHTML("Done!")
+      }
     }
     // Initiate the first download.
     download_next(0);
-    location.href = 'https://samo-dh.herokuapp.com/';
+    document.getElementById("Downloading-notificationdemo").innerHTML("downloading is started!")
+
   }
 
  function download(){
