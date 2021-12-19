@@ -3,6 +3,11 @@
     <td><%= i + 1 %></td>
     <td><%= url.FileName[i] %></td>
     <td> <a href="<%= url.longUrl[i] %>">  <%= url.longUrl[i] %>  </a> </td>
+    <td>
+        <a href="<%= url.longUrl[i] %>" class="btn border-shadow update">
+            <span class="Text-gradient"><i class="fas fa-cloud-download-alt"></i></span>
+        </a>
+    </td>
     
 </tr>
 <% } %>
