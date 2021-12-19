@@ -36,8 +36,9 @@ function download_files(files,filename) {
 
     $.ajax(request).done(function(response){
         try{
+          document.getElementById("Downloading-notification").innerHTML="downloading is started!";
             download_files(response.longUrl,response.FileName);
-            document.getElementById("Downloading-notification").innerHTML="downloading is started!";
+            
         }catch (err){
             console.log(err);
         }
