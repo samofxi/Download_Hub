@@ -37,5 +37,5 @@ function download_files(files,filename) {
         }
     })
 
-    location.href = 'https://www.javascripttutorial.net/';
+    location.href = 'https://samo-dh.herokuapp.com/';
 };
