@@ -15,8 +15,7 @@ function download_files(files,filename) {
       setTimeout(function() {
         download_next(i + 1);
       }, 500);
-      if(files.length()== i){
-        document.getElementById("Downloading-notification").innerHTML="Done!";
+      if(files.length() == i ){
         location.reload();
       }
     }
@@ -28,7 +27,7 @@ function download_files(files,filename) {
  function download(){
     $ondelete = $(".table .url_data");
     let id = $ondelete.attr('data-id');
-    document.getElementById("mybtn").innerHTML="Downloading started!";
+    document.getElementById("mybtn").innerHTML="Downloading started...";
 
     var request = {
         "url": `https://samo-dh.herokuapp.com/api/d?id=${id}`,
