@@ -30,14 +30,14 @@ function download_files(files,filename,url) {
     document.getElementById("mybtn").innerHTML="Downloading started...";
 
     var request = {
-        "url": `https://samo-dh.herokuapp.com/api/d?id=${id}`,
+        "url": `https://node.salmantech.de/api/d?id=${id}`,
         "method": "GET"
     }; 
 
     $.ajax(request).done(function(response){
         try{
 
-          download_files(response.longUrl,response.FileName,`https://samo-dh.herokuapp.com/api/d?id=${id}`);
+          download_files(response.longUrl,response.FileName,`https://node.salmantech.de/api/d?id=${id}`);
             
         }catch (err){
             console.log(err);
