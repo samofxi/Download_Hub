@@ -1,2 +1,2 @@
 # Download_hub
-Download Hub created with js 
+Download Hub created with node.js (Express, mongoose)
